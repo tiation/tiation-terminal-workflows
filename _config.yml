@@ -3,7 +3,7 @@
 title: "Tiation Terminal Workflows"
 description: "Enterprise-Grade Terminal Automation & Productivity Scripts"
 url: "https://tiation.github.io"
-baseurl: "/workflows"
+baseurl: "/tiation-terminal-workflows"
 
 # Theme
 theme: minima
@@ -31,7 +31,7 @@ social:
 
 # GitHub
 github:
-  repository_url: https://github.com/tiation/workflows
+  repository_url: https://github.com/tiation/tiation-terminal-workflows
   repository_name: tiation-terminal-workflows
 
 # Build settings

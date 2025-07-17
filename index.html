@@ -148,6 +148,251 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin-bottom: 3rem;
         }
 
+        .terminal-demo {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 40px 0;
+            border: 2px solid #21262d;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terminal-demo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #21262d;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+            margin-right: 15px;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .terminal-button.close { 
+            background: #ff5f57;
+            box-shadow: 0 0 10px rgba(255, 95, 87, 0.4);
+        }
+        .terminal-button.minimize { 
+            background: #ffbd2e;
+            box-shadow: 0 0 10px rgba(255, 189, 46, 0.4);
+        }
+        .terminal-button.maximize { 
+            background: #28ca42;
+            box-shadow: 0 0 10px rgba(40, 202, 66, 0.4);
+        }
+
+        .terminal-title {
+            color: #58a6ff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .terminal-content {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        .terminal-prompt {
+            color: #7c3aed;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+        }
+
+        .terminal-user {
+            color: #00ffff;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .terminal-command {
+            color: #7ee787;
+            font-weight: 500;
+            text-shadow: 0 0 8px rgba(126, 231, 135, 0.4);
+        }
+
+        .terminal-output {
+            color: #f0f6fc;
+            margin-left: 0;
+        }
+
+        .terminal-success {
+            color: #56d364;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(86, 211, 100, 0.5);
+        }
+
+        .terminal-error {
+            color: #f85149;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(248, 81, 73, 0.5);
+        }
+
+        .terminal-warning {
+            color: #d29922;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(210, 153, 34, 0.5);
+        }
+
+        .terminal-info {
+            color: #58a6ff;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        }
+
+        .code-block {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow-x: auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff006e, #00ffff, #7c3aed);
+        }
+
+        .code-block pre {
+            color: #c9d1d9;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            overflow-x: auto;
+        }
+
+        .code-keyword {
+            color: #ff7b72;
+            font-weight: bold;
+            text-shadow: 0 0 6px rgba(255, 123, 114, 0.4);
+        }
+
+        .code-string {
+            color: #a5d6ff;
+            text-shadow: 0 0 6px rgba(165, 214, 255, 0.4);
+        }
+
+        .code-comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        .code-variable {
+            color: #ffa657;
+            text-shadow: 0 0 6px rgba(255, 166, 87, 0.4);
+        }
+
+        .workflow-showcase {
+            background: #0d1117;
+            padding: 80px 0;
+            border-top: 1px solid #21262d;
+        }
+
+        .workflow-showcase h2 {
+            color: #f0f6fc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .workflow-showcase .section-subtitle {
+            color: #8b949e;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .workflow-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff006e, #00ffff, #7c3aed);
+        }
+
+        .workflow-card h3 {
+            color: #58a6ff;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
+        }
+
+        .workflow-card p {
+            color: #c9d1d9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(35, 134, 54, 0.3);
+        }
+
+        .copy-btn:hover {
+            background: #2ea043;
+            box-shadow: 0 0 15px rgba(46, 160, 67, 0.5);
+        }
+
         .about {
             padding: 80px 0;
             background: #f8f9fa;
@@ -179,6 +424,20 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             justify-content: center;
             color: white;
             font-size: 1.2rem;
+        }
+
+        .typing-animation {
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            background: #00ffff;
+            animation: blink 1s infinite;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
 
         .contact {
@@ -338,6 +597,154 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         </div>
     </section>
 
+    <section class="workflow-showcase">
+        <div class="container">
+            <h2 class="section-title">🚀 Live Workflow Examples</h2>
+            <p class="section-subtitle">See our enterprise workflows in action with real terminal demonstrations</p>
+            
+            <div class="workflow-grid">
+                <div class="workflow-card">
+                    <button class="copy-btn" onclick="copyToClipboard('deploy-code')">Copy</button>
+                    <h3>🏗️ Production Deployment</h3>
+                    <p>Automated Docker + Kubernetes deployment with rollback capabilities</p>
+                    
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button close"></div>
+                                <div class="terminal-button minimize"></div>
+                                <div class="terminal-button maximize"></div>
+                            </div>
+                            <div class="terminal-title">Deploy to Production Environment</div>
+                        </div>
+                        <div class="terminal-content" id="deploy-code">
+<span class="terminal-user">tiaastor@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$ warp workflow deploy-production</span>
+<span class="terminal-info">🚀 Starting production deployment...</span>
+<span class="terminal-success">✅ Docker build completed: myapp:v1.2.3</span>
+<span class="terminal-info">📦 Pushing to registry: your-registry.com/myapp:v1.2.3</span>
+<span class="terminal-warning">⚠️  Updating Kubernetes deployment...</span>
+<span class="terminal-command">kubectl set image deployment/myapp myapp=your-registry.com/myapp:v1.2.3</span>
+<span class="terminal-success">✅ Deployment rollout successful!</span>
+<span class="terminal-info">🎉 Production deployment completed in 2m 34s</span>
+<span class="terminal-user">tiaastor@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$</span><span class="typing-animation"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <button class="copy-btn" onclick="copyToClipboard('security-code')">Copy</button>
+                    <h3>🔒 Security Audit</h3>
+                    <p>Comprehensive vulnerability scanning and compliance checks</p>
+                    
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button close"></div>
+                                <div class="terminal-button minimize"></div>
+                                <div class="terminal-button maximize"></div>
+                            </div>
+                            <div class="terminal-title">Enterprise Security Audit</div>
+                        </div>
+                        <div class="terminal-content" id="security-code">
+<span class="terminal-user">secops@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$ warp workflow security-audit</span>
+<span class="terminal-info">🔒 Starting security audit...</span>
+<span class="terminal-success">✅ NPM audit: 0 vulnerabilities found</span>
+<span class="terminal-info">🐳 Docker scout scanning: myapp:latest</span>
+<span class="terminal-warning">⚠️  Found 2 medium severity issues</span>
+<span class="terminal-command">trivy fs --security-checks vuln .</span>
+<span class="terminal-success">✅ File system scan completed</span>
+<span class="terminal-info">📊 Generating compliance report...</span>
+<span class="terminal-success">✅ Security audit completed!</span>
+<span class="terminal-user">secops@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$</span><span class="typing-animation"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <button class="copy-btn" onclick="copyToClipboard('health-code')">Copy</button>
+                    <h3>📊 System Health Check</h3>
+                    <p>Real-time monitoring and performance analysis</p>
+                    
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button close"></div>
+                                <div class="terminal-button minimize"></div>
+                                <div class="terminal-button maximize"></div>
+                            </div>
+                            <div class="terminal-title">Enterprise System Health Check</div>
+                        </div>
+                        <div class="terminal-content" id="health-code">
+<span class="terminal-user">devops@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$ warp workflow health-check</span>
+<span class="terminal-info">🔍 Starting enterprise system health check...</span>
+<span class="terminal-success">📊 CPU Usage: 23.4%</span>
+<span class="terminal-success">💾 Memory: 68% (Normal)</span>
+<span class="terminal-success">💿 Disk Usage: 45% (/)</span>
+<span class="terminal-info">🏥 Checking Kubernetes pods...</span>
+<span class="terminal-success">✅ All 12 pods running in production namespace</span>
+<span class="terminal-info">🌐 Network connectivity: GOOD</span>
+<span class="terminal-success">✅ Database connection: HEALTHY</span>
+<span class="terminal-info">✅ Health check completed at 2025-01-17 11:42:15</span>
+<span class="terminal-user">devops@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$</span><span class="typing-animation"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="workflow-card">
+                    <button class="copy-btn" onclick="copyToClipboard('backup-code')">Copy</button>
+                    <h3>💾 Backup Automation</h3>
+                    <p>Automated backup with cloud storage integration</p>
+                    
+                    <div class="terminal-demo">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button close"></div>
+                                <div class="terminal-button minimize"></div>
+                                <div class="terminal-button maximize"></div>
+                            </div>
+                            <div class="terminal-title">Enterprise Backup Automation</div>
+                        </div>
+                        <div class="terminal-content" id="backup-code">
+<span class="terminal-user">backup@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$ warp workflow backup-automation</span>
+<span class="terminal-info">💾 Starting enterprise backup automation...</span>
+<span class="terminal-success">📁 Creating backup directory: /var/backups/backup-20250117-114215</span>
+<span class="terminal-info">🗄️ Creating database backup...</span>
+<span class="terminal-success">✅ Database backup: 2.3GB → database.sql</span>
+<span class="terminal-info">📦 Creating application files backup...</span>
+<span class="terminal-success">✅ App files: 1.8GB → app-files.tar.gz</span>
+<span class="terminal-info">☁️ Uploading to cloud storage...</span>
+<span class="terminal-success">✅ S3 sync completed: 4.1GB transferred</span>
+<span class="terminal-info">🧹 Cleaning up old backups...</span>
+<span class="terminal-success">✅ Backup completed successfully!</span>
+<span class="terminal-user">backup@enterprise</span><span class="terminal-prompt">:</span><span class="terminal-command">~$</span><span class="typing-animation"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyToClipboard('yaml-example')">Copy</button>
+                <pre id="yaml-example"><span class="code-comment"># Example workflow configuration</span>
+<span class="code-keyword">name</span>: <span class="code-string">"Deploy to Production Environment"</span>
+<span class="code-keyword">command</span>: <span class="code-string">|-</span>
+  <span class="code-variable">echo</span> <span class="code-string">"🚀 Starting production deployment..."</span>
+  <span class="code-variable">docker</span> build -t <span class="code-variable">{{app_name}}</span>:<span class="code-variable">{{version}}</span> .
+  <span class="code-variable">kubectl</span> set image deployment/<span class="code-variable">{{app_name}}</span> <span class="code-variable">{{app_name}}</span>=<span class="code-variable">{{registry_url}}</span>/<span class="code-variable">{{app_name}}</span>:<span class="code-variable">{{version}}</span>
+  <span class="code-variable">kubectl</span> rollout status deployment/<span class="code-variable">{{app_name}}</span>
+  <span class="code-variable">echo</span> <span class="code-string">"✅ Production deployment completed!"</span>
+<span class="code-keyword">tags</span>:
+  - <span class="code-string">enterprise</span>
+  - <span class="code-string">deployment</span>
+  - <span class="code-string">kubernetes</span>
+<span class="code-keyword">description</span>: <span class="code-string">Enterprise-grade production deployment workflow</span>
+<span class="code-keyword">arguments</span>:
+  - <span class="code-keyword">name</span>: <span class="code-string">app_name</span>
+    <span class="code-keyword">description</span>: <span class="code-string">Application name</span>
+    <span class="code-keyword">default_value</span>: <span class="code-string">myapp</span></pre>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-content">
@@ -387,6 +794,32 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
+        
+        // Copy to clipboard functionality
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText || element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                // Find the copy button for this element
+                const copyBtn = element.closest('.workflow-card, .code-block').querySelector('.copy-btn');
+                const originalText = copyBtn.textContent;
+                
+                // Show feedback
+                copyBtn.textContent = 'Copied!';
+                copyBtn.style.background = '#238636';
+                copyBtn.style.boxShadow = '0 0 15px rgba(35, 134, 54, 0.8)';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                    copyBtn.style.background = '#238636';
+                    copyBtn.style.boxShadow = '0 0 10px rgba(35, 134, 54, 0.3)';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
     </script>
 </body>
 </html>
