@@ -25,7 +25,7 @@ arguments:
     default_value: Jhon Doe
   - name: userEmail
     description: The Email of the User to be configured for the git repository
-    default_value: johndoe@example.com
+    default_value: tiatheone@protonmail.com
 source_url: "https://github.com/charlieVader/warp-workflows/blob/master/git/clone-with-ssh.yaml"
 author: charlieVader
 author_url: "https://github.com/charlieVader"
