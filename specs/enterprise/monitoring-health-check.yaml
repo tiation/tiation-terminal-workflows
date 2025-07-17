@@ -1,0 +1,55 @@
+---
+name: Enterprise System Health Check
+command: |-
+  echo "🔍 Starting enterprise system health check..."
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  
+  # System Resources
+  echo "📊 System Resources:"
+  echo "CPU Usage: $(top -l 1 | grep "CPU usage" | awk '{print $3}' | sed 's/%//')"
+  echo "Memory: $(memory_pressure | head -1)"
+  echo "Disk Usage: $(df -h {{disk_path}} | tail -1 | awk '{print $5}')"
+  
+  # Service Health
+  echo "🏥 Service Health:"
+  kubectl get pods -n {{namespace}} --field-selector=status.phase=Running
+  
+  # Network Connectivity
+  echo "🌐 Network Connectivity:"
+  ping -c 3 {{endpoint_url}}
+  
+  # Database Connection
+  echo "🗄️ Database Status:"
+  pg_isready -h {{db_host}} -p {{db_port}} -U {{db_user}}
+  
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "✅ Health check completed at $(date)"
+tags:
+  - enterprise
+  - monitoring
+  - health
+  - system
+  - kubernetes
+description: Comprehensive enterprise system health monitoring workflow
+arguments:
+  - name: disk_path
+    description: Disk path to monitor
+    default_value: /
+  - name: namespace
+    description: Kubernetes namespace to monitor
+    default_value: production
+  - name: endpoint_url
+    description: Network endpoint to test
+    default_value: google.com
+  - name: db_host
+    description: Database host
+    default_value: localhost
+  - name: db_port
+    description: Database port
+    default_value: 5432
+  - name: db_user
+    description: Database user
+    default_value: postgres
+author: Tiation Team
+author_url: "mailto:tiatheone@protonmail.com"
+shells: [bash, zsh]

@@ -1,0 +1,72 @@
+# GitHub Pages Configuration for Tiation Terminal Workflows
+
+title: "Tiation Terminal Workflows"
+description: "Enterprise-Grade Terminal Automation & Productivity Scripts"
+url: "https://tiation.github.io"
+baseurl: "/workflows"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Navigation
+header_pages:
+  - README.md
+  - FORMAT.md
+  - REPOSITORY_INDEX.md
+
+# SEO
+twitter:
+  username: tiaastor
+  card: summary_large_image
+
+social:
+  name: Tiation Team
+  links:
+    - https://github.com/tiaastor
+    - mailto:tiatheone@protonmail.com
+
+# GitHub
+github:
+  repository_url: https://github.com/tiation/workflows
+  repository_name: tiation-terminal-workflows
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude from processing
+exclude:
+  - .git
+  - .gitignore
+  - node_modules
+  - vendor
+  - build_ts
+  - workflow-types
+  - script
+
+# Collections
+collections:
+  workflows:
+    output: true
+    permalink: /workflows/:name/
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tiation Team"
+  - scope:
+      path: ""
+      type: "workflows"
+    values:
+      layout: "workflow"

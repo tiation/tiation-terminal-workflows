@@ -1,0 +1,66 @@
+---
+name: Enterprise Backup Automation
+command: |-
+  echo "💾 Starting enterprise backup automation..."
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  
+  # Create backup directory with timestamp
+  BACKUP_DIR="{{backup_path}}/backup-$(date +%Y%m%d-%H%M%S)"
+  mkdir -p "$BACKUP_DIR"
+  
+  # Database backup
+  echo "🗄️ Creating database backup..."
+  pg_dump -h {{db_host}} -U {{db_user}} -d {{db_name}} > "$BACKUP_DIR/database.sql"
+  
+  # Application files backup
+  echo "📁 Creating application files backup..."
+  tar -czf "$BACKUP_DIR/app-files.tar.gz" {{app_directory}}
+  
+  # Configuration backup
+  echo "⚙️ Creating configuration backup..."
+  tar -czf "$BACKUP_DIR/configs.tar.gz" {{config_directory}}
+  
+  # Upload to cloud storage
+  echo "☁️ Uploading to cloud storage..."
+  aws s3 sync "$BACKUP_DIR" s3://{{s3_bucket}}/backups/$(basename "$BACKUP_DIR")/
+  
+  # Cleanup old backups (keep last 7 days)
+  echo "🧹 Cleaning up old backups..."
+  find {{backup_path}} -type d -name "backup-*" -mtime +7 -exec rm -rf {} \;
+  
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "✅ Backup completed successfully at $(date)"
+  echo "📍 Backup location: $BACKUP_DIR"
+tags:
+  - enterprise
+  - backup
+  - automation
+  - database
+  - cloud
+  - aws
+description: Automated enterprise backup system with cloud storage integration
+arguments:
+  - name: backup_path
+    description: Local backup directory path
+    default_value: /var/backups
+  - name: db_host
+    description: Database host
+    default_value: localhost
+  - name: db_user
+    description: Database user
+    default_value: postgres
+  - name: db_name
+    description: Database name
+    default_value: production
+  - name: app_directory
+    description: Application directory to backup
+    default_value: /opt/app
+  - name: config_directory
+    description: Configuration directory to backup
+    default_value: /etc/myapp
+  - name: s3_bucket
+    description: S3 bucket for cloud backup
+    default_value: my-enterprise-backups
+author: Tiation Team
+author_url: "mailto:tiatheone@protonmail.com"
+shells: [bash, zsh]

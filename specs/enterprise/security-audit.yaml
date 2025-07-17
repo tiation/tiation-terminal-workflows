@@ -1,0 +1,26 @@
+---
+name: Enterprise Security Audit
+command: |-
+  echo "🔒 Starting security audit..."
+  npm audit --audit-level high
+  docker scout cves {{image_name}}
+  trivy fs --security-checks vuln .
+  bandit -r {{source_directory}}
+  echo "✅ Security audit completed!"
+tags:
+  - enterprise
+  - security
+  - audit
+  - vulnerability
+  - compliance
+description: Comprehensive security audit workflow for enterprise applications
+arguments:
+  - name: image_name
+    description: Docker image name to scan for vulnerabilities
+    default_value: myapp:latest
+  - name: source_directory
+    description: Source code directory to scan
+    default_value: ./src
+author: Tiation Team
+author_url: "mailto:tiatheone@protonmail.com"
+shells: [bash, zsh]

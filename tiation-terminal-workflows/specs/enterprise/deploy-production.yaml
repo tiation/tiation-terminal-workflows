@@ -1,0 +1,30 @@
+---
+name: Deploy to Production Environment
+command: |-
+  echo "🚀 Starting production deployment..."
+  docker build -t {{app_name}}:{{version}} .
+  docker tag {{app_name}}:{{version}} {{registry_url}}/{{app_name}}:{{version}}
+  docker push {{registry_url}}/{{app_name}}:{{version}}
+  kubectl set image deployment/{{app_name}} {{app_name}}={{registry_url}}/{{app_name}}:{{version}}
+  kubectl rollout status deployment/{{app_name}}
+  echo "✅ Production deployment completed successfully!"
+tags:
+  - enterprise
+  - deployment
+  - kubernetes
+  - docker
+  - production
+description: Enterprise-grade production deployment workflow with Docker and Kubernetes
+arguments:
+  - name: app_name
+    description: The name of the application to deploy
+    default_value: myapp
+  - name: version
+    description: The version tag for the deployment
+    default_value: latest
+  - name: registry_url
+    description: The Docker registry URL
+    default_value: your-registry.com
+author: Tiation Team
+author_url: "https://github.com/tiaastor"
+shells: [bash, zsh]
