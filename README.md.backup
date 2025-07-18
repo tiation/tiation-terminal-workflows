@@ -1,21 +1,5 @@
 # 🐠 Tiation Terminal Workflows
 
-<div align="center">
-
-![Tiation Ecosystem](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation_terminal_workflows-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
-
-**Enterprise productivity tools for Warp terminal**
-
-*Automated • Efficient • Developer-Focused*
-
-[![⚡_Terminal](https://img.shields.io/badge/⚡_Terminal-Warp_Workflows-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-terminal-workflows)
-[![🤖_Automation](https://img.shields.io/badge/🤖_Automation-Scripts-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-terminal-workflows)
-[![🛠️_Tools](https://img.shields.io/badge/🛠️_Tools-Developer-007FFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-terminal-workflows)
-[![🚀_Productivity](https://img.shields.io/badge/🚀_Productivity-Enterprise-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-terminal-workflows)
-
-</div>
-
----
 <!-- Hero Image with Dark Neon Theme -->
 <div align="center">
   <img src=".screenshots/hero-banner.png" alt="Tiation Terminal Workflows - Enterprise Automation Platform" width="100%">
@@ -337,19 +321,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     <img src="https://img.shields.io/github/stars/TiaAstor/tiation-terminal-workflows?style=social&label=Star&maxAge=2592000" alt="GitHub Stars">
   </a>
 </div>
-
----
-
-## 🔮 Tiation Ecosystem
-
-This repository is part of the Tiation ecosystem. Explore related projects:
-
-- [🌟 TiaAstor](https://github.com/TiaAstor/TiaAstor) - Personal brand and story
-- [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
-- [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
-- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
-- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
-- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
-
----
-*Built with 💜 by the Tiation team*
