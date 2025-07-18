@@ -1,10 +1,23 @@
 # GitHub Pages Configuration
-title: "tiation-terminal-workflows"
-description: "Enterprise-grade solution in the Tiation ecosystem"
+title: "Tiation Terminal Workflows"
+description: "Enterprise-grade terminal automation workflows for Warp. Pre-configured scripts for DevOps, security audits, deployments, and productivity."
 url: "https://tiation.github.io/tiation-terminal-workflows"
 baseurl: ""
+repository: "tiation/tiation-terminal-workflows"
 
-# Theme
+# SEO and Social Media
+author:
+  name: "Tiation"
+  email: "tiatheone@protonmail.com"
+  url: "https://github.com/tiation"
+
+social:
+  name: "Tiation Terminal Workflows"
+  links:
+    - "https://github.com/tiation"
+    - "https://github.com/tiation/tiation-terminal-workflows"
+
+# Theme and Markdown
 theme: minima
 markdown: kramdown
 highlighter: rouge
@@ -14,18 +27,95 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-github-metadata
 
-# Dark neon theme
+# SEO Tag settings
+tag_title: "Tiation Terminal Workflows - Enterprise-Grade Terminal Automation"
+tag_description: "Enterprise-grade terminal automation workflows for Warp. Pre-configured scripts for DevOps, security audits, deployments, and productivity."
+image: "/assets/hero-banner.svg"
+logo: "/assets/hero-banner.svg"
+
+# Twitter settings
+twitter:
+  username: "tiation"
+  card: "summary_large_image"
+
+# Facebook settings
+facebook:
+  app_id: "your-app-id"
+  publisher: "https://facebook.com/tiation"
+
+# Additional metadata
+lang: "en_US"
+timezone: "America/New_York"
+
+# Collections
+collections:
+  workflows:
+    output: true
+    permalink: /:collection/:name/
+
+# Build settings
+safe: true
+incremental: false
+
+# Sass
+sass:
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - _screenshots
+  - build_ts
+  - specs
+
+# Custom variables
+company:
+  name: "Tiation"
+  url: "https://github.com/tiation"
+  email: "tiatheone@protonmail.com"
+
+features:
+  - "200+ Workflow Templates"
+  - "Enterprise Security"
+  - "24/7 Support"
+  - "Dark Neon Theme"
+  - "Comprehensive Documentation"
+  - "Regular Updates"
+
+# Analytics (uncomment when ready)
+# google_analytics: "UA-XXXXXXXX-X"
+# gtag: "GA_MEASUREMENT_ID"
+
+# Dark neon theme variables
 custom_css: |
   :root {
-    --primary-color: #00ffff;
-    --secondary-color: #ff00ff;
-    --background-color: #0a0a0a;
-    --text-color: #ffffff;
-    --accent-color: #00ff88;
+    --primary-color: #00D9FF;
+    --secondary-color: #00FF88;
+    --accent-color: #FF0080;
+    --background-color: #0A0A0A;
+    --card-background: #1A1A2E;
+    --text-color: #FFFFFF;
+    --text-gray: #B0B0B0;
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --gradient-secondary: linear-gradient(135deg, var(--background-color), var(--card-background));
+    --shadow-neon: 0 0 20px rgba(0, 217, 255, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.3s ease;
+    --border-radius: 12px;
   }
   
   body {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    background: var(--gradient-secondary);
     color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }

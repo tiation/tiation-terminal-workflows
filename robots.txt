@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tiation.github.io/tiation-terminal-workflows/sitemap.xml
+
+# Crawl-delay for respect
+Crawl-delay: 1
+
+# Disallow specific paths that shouldn't be indexed
+Disallow: /build_ts/
+Disallow: /.screenshots/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /specs/
+
+# Allow important directories
+Allow: /assets/
+Allow: /docs/
+Allow: /demo.html
+Allow: /index.html

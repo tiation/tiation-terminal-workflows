@@ -1,11 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiation Terminal Workflows - Interactive Demo</title>
+    <title>Interactive Demo - Tiation Terminal Workflows</title>
+    <meta name="description" content="Interactive demo of Tiation Terminal Workflows - Experience enterprise-grade terminal automation in action">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
     <style>
+        :root {
+            --primary-color: #00D9FF;
+            --secondary-color: #00FF88;
+            --accent-color: #FF0080;
+            --background-dark: #0A0A0A;
+            --background-card: #1A1A2E;
+            --text-light: #FFFFFF;
+            --text-gray: #B0B0B0;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            --shadow-neon: 0 0 20px rgba(0, 217, 255, 0.3);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --transition-smooth: 0.3s ease;
+            --border-radius: 12px;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,355 +30,462 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1F2937 100%);
-            color: #FFFFFF;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--background-dark), var(--background-card));
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 2rem;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
         }
         
-        .hero {
+        .demo-header {
             text-align: center;
-            padding: 4rem 0;
-            background: radial-gradient(circle at center, #00FFFF20 0%, transparent 70%);
-            border-radius: 20px;
             margin-bottom: 3rem;
         }
         
-        .hero h1 {
+        .demo-header h1 {
             font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #00FFFF, #FF00FF);
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
         }
         
-        .hero p {
+        .demo-header p {
+            color: var(--text-gray);
             font-size: 1.2rem;
-            color: #E5E7EB;
-            margin-bottom: 2rem;
         }
         
         .demo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin-bottom: 3rem;
         }
         
-        .demo-card {
-            background: rgba(31, 41, 55, 0.8);
-            border-radius: 16px;
+        .workflow-selector {
+            background: var(--background-card);
+            border-radius: var(--border-radius);
             padding: 2rem;
-            border: 2px solid #374151;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(0, 217, 255, 0.2);
         }
         
-        .demo-card:hover {
-            border-color: #00FFFF;
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-        }
-        
-        .demo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #00FFFF, #FF00FF);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .demo-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .demo-card h3 {
-            color: #00FFFF;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-        
-        .demo-card p {
-            color: #D1D5DB;
+        .workflow-selector h2 {
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
         
-        .demo-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #00FFFF, #FF00FF);
-            color: #0A0A0A;
-            padding: 0.75rem 1.5rem;
+        .workflow-list {
+            list-style: none;
+        }
+        
+        .workflow-item {
+            background: var(--background-dark);
+            margin: 0.5rem 0;
+            padding: 1rem;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
-        .demo-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+        .workflow-item:hover {
+            border-color: var(--primary-color);
+            transform: translateX(10px);
         }
         
-        .features-section {
-            background: rgba(139, 92, 246, 0.1);
-            border-radius: 16px;
-            padding: 3rem;
-            margin-bottom: 3rem;
+        .workflow-item.active {
+            border-color: var(--secondary-color);
+            background: rgba(0, 255, 136, 0.1);
         }
         
-        .features-section h2 {
-            color: #00FFFF;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
+        .workflow-icon {
+            font-size: 1.5rem;
         }
         
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+        .workflow-info h3 {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
         }
         
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
+        .workflow-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
         
-        .feature-item h4 {
-            color: #FF00FF;
-            margin-bottom: 0.5rem;
-        }
-        
-        .interactive-demo {
-            background: #1F2937;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 2px solid #00FFFF;
-        }
-        
-        .interactive-demo h3 {
-            color: #00FFFF;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .demo-simulator {
-            background: #0A0A0A;
-            border-radius: 12px;
-            padding: 2rem;
-            min-height: 400px;
-            border: 1px solid #374151;
-            position: relative;
+        .terminal-demo {
+            background: var(--background-dark);
+            border-radius: var(--border-radius);
+            border: 2px solid var(--primary-color);
             overflow: hidden;
+            box-shadow: var(--shadow-card);
         }
         
-        .demo-simulator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 49%, rgba(0, 255, 255, 0.1) 50%, transparent 51%);
-            background-size: 20px 20px;
-            animation: matrix 20s linear infinite;
+        .terminal-header {
+            background: var(--background-card);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
-        @keyframes matrix {
-            0% { background-position: 0 0; }
-            100% { background-position: 20px 20px; }
+        .terminal-controls {
+            display: flex;
+            gap: 0.5rem;
         }
         
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            color: #6B7280;
-            border-top: 1px solid #374151;
+        .terminal-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
         
-        .footer a {
-            color: #00FFFF;
+        .terminal-control.close {
+            background: var(--accent-color);
+        }
+        
+        .terminal-control.minimize {
+            background: #FFD700;
+        }
+        
+        .terminal-control.maximize {
+            background: var(--secondary-color);
+        }
+        
+        .terminal-title {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .terminal-content {
+            padding: 1rem;
+            min-height: 400px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .terminal-line {
+            margin: 0.5rem 0;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .terminal-prompt {
+            color: var(--primary-color);
+        }
+        
+        .terminal-command {
+            color: var(--text-light);
+        }
+        
+        .terminal-output {
+            color: var(--text-gray);
+            margin-left: 1rem;
+        }
+        
+        .terminal-success {
+            color: var(--secondary-color);
+        }
+        
+        .terminal-error {
+            color: var(--accent-color);
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1rem;
+            background: var(--primary-color);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--background-dark);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        .footer a:hover {
-            text-decoration: underline;
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-neon);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
             .demo-grid {
                 grid-template-columns: 1fr;
             }
-        }
+            
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
     </style>
 </head>
 <body>
     <div class="container">
-        <header class="hero">
-            <h1>Tiation Terminal Workflows</h1>
-            <p>Enterprise-grade Automation Platform - Interactive Demo</p>
-            <a href="https://github.com/tiaastor/tiation-terminal-workflows" class="demo-button">
-                View on GitHub
-            </a>
-        </header>
-        
-        <div class="demo-grid">
-
-            <div class="demo-card" onclick="openDemo('workflow_builder_interface')">
-                <h3>Workflow Builder Interface</h3>
-                <p>Interactive demonstration of workflow builder interface with real-time data and enterprise features.</p>
-                <span class="demo-button">Launch Demo</span>
-            </div>
-
-            <div class="demo-card" onclick="openDemo('terminal_command_simulator')">
-                <h3>Terminal Command Simulator</h3>
-                <p>Interactive demonstration of terminal command simulator with real-time data and enterprise features.</p>
-                <span class="demo-button">Launch Demo</span>
-            </div>
-
-            <div class="demo-card" onclick="openDemo('automation_scripts_gallery')">
-                <h3>Automation Scripts Gallery</h3>
-                <p>Interactive demonstration of automation scripts gallery with real-time data and enterprise features.</p>
-                <span class="demo-button">Launch Demo</span>
-            </div>
-
-            <div class="demo-card" onclick="openDemo('performance_metrics')">
-                <h3>Performance Metrics</h3>
-                <p>Interactive demonstration of performance metrics with real-time data and enterprise features.</p>
-                <span class="demo-button">Launch Demo</span>
-            </div>
-
-            <div class="demo-card" onclick="openDemo('enterprise_productivity_tools')">
-                <h3>Enterprise Productivity Tools</h3>
-                <p>Interactive demonstration of enterprise productivity tools with real-time data and enterprise features.</p>
-                <span class="demo-button">Launch Demo</span>
-            </div>
-
+        <div class="demo-header">
+            <h1>🚀 Interactive Demo</h1>
+            <p>Experience Tiation Terminal Workflows in action</p>
         </div>
         
-        <section class="features-section">
-            <h2>Live Features</h2>
-            <div class="features-list">
-
-                <div class="feature-item">
-                    <h4>Interactive Workflow Builder</h4>
-                    <p>Real-time interactive workflow builder with interactive controls and enterprise-grade performance.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h4>Live Terminal Simulator</h4>
-                    <p>Real-time live terminal simulator with interactive controls and enterprise-grade performance.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h4>Script Performance Analyzer</h4>
-                    <p>Real-time script performance analyzer with interactive controls and enterprise-grade performance.</p>
-                </div>
-
-                <div class="feature-item">
-                    <h4>Productivity Calculator</h4>
-                    <p>Real-time productivity calculator with interactive controls and enterprise-grade performance.</p>
-                </div>
-
+        <div class="demo-grid">
+            <div class="workflow-selector">
+                <h2>Select a Workflow</h2>
+                <ul class="workflow-list">
+                    <li class="workflow-item active" data-workflow="security-audit">
+                        <span class="workflow-icon">🔒</span>
+                        <div class="workflow-info">
+                            <h3>Enterprise Security Audit</h3>
+                            <p>Comprehensive security scanning and compliance checks</p>
+                        </div>
+                    </li>
+                    <li class="workflow-item" data-workflow="deployment">
+                        <span class="workflow-icon">🚀</span>
+                        <div class="workflow-info">
+                            <h3>Production Deployment</h3>
+                            <p>Automated deployment with rollback capabilities</p>
+                        </div>
+                    </li>
+                    <li class="workflow-item" data-workflow="monitoring">
+                        <span class="workflow-icon">📊</span>
+                        <div class="workflow-info">
+                            <h3>Health Monitoring</h3>
+                            <p>System health checks and performance monitoring</p>
+                        </div>
+                    </li>
+                    <li class="workflow-item" data-workflow="backup">
+                        <span class="workflow-icon">💾</span>
+                        <div class="workflow-info">
+                            <h3>Backup Automation</h3>
+                            <p>Automated backup and restore procedures</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </section>
-        
-        <section class="interactive-demo">
-            <h3>Live Demo Environment</h3>
-            <div class="demo-simulator" id="demoSimulator">
-                <div style="color: #00FFFF; text-align: center; padding: 2rem;">
-                    <h4>🔮 Tiation Terminal Workflows Interactive Demo</h4>
-                    <p>Click on any demo card above to launch interactive demonstrations</p>
-                    <div style="margin-top: 2rem;">
-                        <div style="display: inline-block; margin: 0 1rem;">
-                            <div style="color: #FF00FF;">Status:</div>
-                            <div id="status">Ready</div>
-                        </div>
-                        <div style="display: inline-block; margin: 0 1rem;">
-                            <div style="color: #FF00FF;">Users:</div>
-                            <div id="users">1,337</div>
-                        </div>
-                        <div style="display: inline-block; margin: 0 1rem;">
-                            <div style="color: #FF00FF;">Uptime:</div>
-                            <div id="uptime">99.9%</div>
-                        </div>
+            
+            <div class="terminal-demo">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <div class="terminal-control close"></div>
+                        <div class="terminal-control minimize"></div>
+                        <div class="terminal-control maximize"></div>
                     </div>
+                    <div class="terminal-title">Warp Terminal - Tiation Workflows</div>
+                </div>
+                <div class="terminal-content" id="terminal-content">
+                    <!-- Terminal output will be populated here -->
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" onclick="runWorkflow()">▶️ Run Workflow</button>
+            <button class="btn btn-secondary" onclick="clearTerminal()">🔄 Clear Terminal</button>
+            <a href="https://github.com/tiation/tiation-terminal-workflows" class="btn btn-secondary" target="_blank">📦 Get Started</a>
+        </div>
     </div>
-    
-    <footer class="footer">
-        <p>Built with ❤️ by <a href="https://github.com/tiaastor">Tiation</a> | 
-        <a href="https://github.com/tiaastor/tiation-terminal-workflows">View Repository</a> | 
-        <a href="https://github.com/tiaastor/tiation-terminal-workflows/wiki">Documentation</a></p>
-    </footer>
-    
+
     <script>
-        function openDemo(demoType) {
-            const simulator = document.getElementById('demoSimulator');
-            const status = document.getElementById('status');
-            
-            status.textContent = 'Loading ' + demoType.replace('_', ' ') + '...';
-            
-            setTimeout(() => {
-                simulator.innerHTML = `
-                    <div style="color: #00FFFF; text-align: center; padding: 2rem;">
-                        <h4>🚀 ${demoType.replace('_', ' ').toUpperCase()} Demo</h4>
-                        <p>Interactive demonstration of ${demoType.replace('_', ' ')} functionality</p>
-                        <div style="margin-top: 2rem; background: rgba(0,255,255,0.1); padding: 1rem; border-radius: 8px;">
-                            <div style="color: #FF00FF; margin-bottom: 1rem;">Demo Features:</div>
-                            <div style="text-align: left; max-width: 400px; margin: 0 auto;">
-                                <div>✓ Real-time data visualization</div>
-                                <div>✓ Interactive controls</div>
-                                <div>✓ Enterprise-grade performance</div>
-                                <div>✓ Dark neon theme</div>
-                            </div>
-                        </div>
-                        <button onclick="resetDemo()" style="margin-top: 1rem; background: linear-gradient(135deg, #00FFFF, #FF00FF); color: #0A0A0A; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">
-                            Reset Demo
-                        </button>
-                    </div>
-                `;
-                status.textContent = 'Demo Active';
-            }, 1000);
-        }
-        
-        function resetDemo() {
-            location.reload();
-        }
-        
-        // Simulate real-time updates
-        setInterval(() => {
-            const users = document.getElementById('users');
-            if (users) {
-                const currentUsers = parseInt(users.textContent.replace(',', ''));
-                const newUsers = currentUsers + Math.floor(Math.random() * 10) - 5;
-                users.textContent = Math.max(1000, newUsers).toLocaleString();
+        const workflows = {
+            'security-audit': {
+                name: 'Enterprise Security Audit',
+                steps: [
+                    { type: 'command', text: '$ warp workflow run security-audit' },
+                    { type: 'output', text: '🔒 Initializing Enterprise Security Audit...' },
+                    { type: 'output', text: '📋 Scanning system vulnerabilities...' },
+                    { type: 'success', text: '✅ No critical vulnerabilities found' },
+                    { type: 'output', text: '🔍 Checking compliance standards...' },
+                    { type: 'success', text: '✅ SOC 2 compliance verified' },
+                    { type: 'success', text: '✅ GDPR compliance verified' },
+                    { type: 'output', text: '📊 Generating security report...' },
+                    { type: 'success', text: '✅ Security audit completed successfully' },
+                    { type: 'output', text: '📄 Report saved: security-audit-2025-01-18.pdf' }
+                ]
+            },
+            'deployment': {
+                name: 'Production Deployment',
+                steps: [
+                    { type: 'command', text: '$ warp workflow run production-deployment' },
+                    { type: 'output', text: '🚀 Initializing production deployment...' },
+                    { type: 'output', text: '🔧 Running pre-deployment checks...' },
+                    { type: 'success', text: '✅ All tests passed' },
+                    { type: 'output', text: '📦 Building application bundle...' },
+                    { type: 'success', text: '✅ Build completed (2.3MB)' },
+                    { type: 'output', text: '🌐 Deploying to production servers...' },
+                    { type: 'success', text: '✅ Deployed to server-01.prod.example.com' },
+                    { type: 'success', text: '✅ Deployed to server-02.prod.example.com' },
+                    { type: 'output', text: '🔄 Running health checks...' },
+                    { type: 'success', text: '✅ Deployment successful! 🎉' }
+                ]
+            },
+            'monitoring': {
+                name: 'Health Monitoring',
+                steps: [
+                    { type: 'command', text: '$ warp workflow run health-monitoring' },
+                    { type: 'output', text: '📊 Starting system health monitoring...' },
+                    { type: 'output', text: '🖥️  Checking CPU usage...' },
+                    { type: 'success', text: '✅ CPU: 15% (Normal)' },
+                    { type: 'output', text: '💾 Checking memory usage...' },
+                    { type: 'success', text: '✅ Memory: 68% (Normal)' },
+                    { type: 'output', text: '💽 Checking disk usage...' },
+                    { type: 'success', text: '✅ Disk: 42% (Normal)' },
+                    { type: 'output', text: '🌐 Checking network connectivity...' },
+                    { type: 'success', text: '✅ Network: 98.7% uptime' },
+                    { type: 'success', text: '✅ All systems operational' }
+                ]
+            },
+            'backup': {
+                name: 'Backup Automation',
+                steps: [
+                    { type: 'command', text: '$ warp workflow run backup-automation' },
+                    { type: 'output', text: '💾 Initializing backup automation...' },
+                    { type: 'output', text: '📂 Scanning directories for backup...' },
+                    { type: 'success', text: '✅ Found 1,247 files to backup' },
+                    { type: 'output', text: '🔄 Creating incremental backup...' },
+                    { type: 'success', text: '✅ Backup created (485MB)' },
+                    { type: 'output', text: '☁️  Uploading to secure cloud storage...' },
+                    { type: 'success', text: '✅ Upload completed' },
+                    { type: 'output', text: '🔐 Encrypting backup data...' },
+                    { type: 'success', text: '✅ Backup encrypted with AES-256' },
+                    { type: 'success', text: '✅ Backup automation completed!' }
+                ]
             }
-        }, 5000);
+        };
+
+        let currentWorkflow = 'security-audit';
+        let isRunning = false;
+
+        function initializeDemo() {
+            const workflowItems = document.querySelectorAll('.workflow-item');
+            workflowItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    workflowItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    currentWorkflow = this.dataset.workflow;
+                    showWorkflowInfo();
+                });
+            });
+            
+            showWorkflowInfo();
+        }
+
+        function showWorkflowInfo() {
+            const terminalContent = document.getElementById('terminal-content');
+            const workflow = workflows[currentWorkflow];
+            
+            terminalContent.innerHTML = `
+                <div class="terminal-line">
+                    <span class="terminal-prompt">➜</span>
+                    <span class="terminal-command"> Ready to run: ${workflow.name}</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-output">Click "Run Workflow" to see this workflow in action</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span>
+                    <span class="terminal-cursor"></span>
+                </div>
+            `;
+        }
+
+        function runWorkflow() {
+            if (isRunning) return;
+            
+            isRunning = true;
+            const terminalContent = document.getElementById('terminal-content');
+            const workflow = workflows[currentWorkflow];
+            
+            terminalContent.innerHTML = '';
+            
+            workflow.steps.forEach((step, index) => {
+                setTimeout(() => {
+                    const line = document.createElement('div');
+                    line.className = 'terminal-line';
+                    line.style.animationDelay = `${index * 0.1}s`;
+                    
+                    if (step.type === 'command') {
+                        line.innerHTML = `<span class="terminal-prompt">$</span> <span class="terminal-command">${step.text.substring(2)}</span>`;
+                    } else if (step.type === 'success') {
+                        line.innerHTML = `<span class="terminal-success">${step.text}</span>`;
+                    } else if (step.type === 'error') {
+                        line.innerHTML = `<span class="terminal-error">${step.text}</span>`;
+                    } else {
+                        line.innerHTML = `<span class="terminal-output">${step.text}</span>`;
+                    }
+                    
+                    terminalContent.appendChild(line);
+                    terminalContent.scrollTop = terminalContent.scrollHeight;
+                    
+                    if (index === workflow.steps.length - 1) {
+                        setTimeout(() => {
+                            const cursorLine = document.createElement('div');
+                            cursorLine.className = 'terminal-line';
+                            cursorLine.innerHTML = '<span class="terminal-prompt">$</span> <span class="terminal-cursor"></span>';
+                            terminalContent.appendChild(cursorLine);
+                            isRunning = false;
+                        }, 500);
+                    }
+                }, index * 800);
+            });
+        }
+
+        function clearTerminal() {
+            if (isRunning) return;
+            
+            const terminalContent = document.getElementById('terminal-content');
+            terminalContent.innerHTML = '';
+            showWorkflowInfo();
+        }
+
+        // Initialize the demo when the page loads
+        document.addEventListener('DOMContentLoaded', initializeDemo);
     </script>
 </body>
 </html>
