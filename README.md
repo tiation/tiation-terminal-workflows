@@ -1,15 +1,20 @@
-# Project Name
+# 🐠 Tiation Terminal Workflows
 
 <!-- Hero Image with Dark Neon Theme -->
 <div align="center">
-  <img src=".screenshots/hero-banner.png" alt="Project Hero Banner" width="100%">
+  <img src=".screenshots/hero-banner.png" alt="Tiation Terminal Workflows - Enterprise Automation Platform" width="100%">
 </div>
 
 <div align="center">
   
+[![Build Status](https://img.shields.io/badge/Build-Passing-00FF88?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/TiaAstor/tiation-terminal-workflows/actions)
+[![Warp Compatible](https://img.shields.io/badge/Warp-Compatible-00D9FF?style=for-the-badge&logo=warp&logoColor=white)](https://warp.dev)
+[![Terminal](https://img.shields.io/badge/Terminal-Workflows-00FF88?style=for-the-badge&logo=terminal&logoColor=white)](https://github.com/TiaAstor/tiation-terminal-workflows)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-00D9FF?style=for-the-badge&logo=github&logoColor=white)](https://tiaastor.github.io/tiation-terminal-workflows)
 [![Documentation](https://img.shields.io/badge/Documentation-Complete-00FF88?style=for-the-badge&logo=gitbook&logoColor=white)](https://github.com/TiaAstor/tiation-terminal-workflows/wiki)
 [![License](https://img.shields.io/badge/License-MIT-FF0080?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Automation](https://img.shields.io/badge/Automation-Enterprise-FFE500?style=for-the-badge&logo=zapier&logoColor=white)](https://github.com/TiaAstor/tiation-terminal-workflows)
+[![Productivity](https://img.shields.io/badge/Productivity-Optimized-00FF88?style=for-the-badge&logo=productivity&logoColor=white)](https://github.com/TiaAstor/tiation-terminal-workflows)
 
 </div>
 
