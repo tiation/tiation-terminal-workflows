@@ -1,11 +1,96 @@
-<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1A1A2E;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#16213E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00FF88;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#FF0080;stop-opacity:1" />
     </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="neonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:0" />
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00D9FF" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
   </defs>
-  <rect width="100%" height="100%" fill="#0D1117"/>
-  <rect x="10" y="10" width="1180" height="380" fill="url(#grad1)" opacity="0.1"/>
-  <text x="50%" y="50%" text-anchor="middle" fill="#00D9FF" font-family="Arial" font-size="24" font-weight="bold">Hero Banner</text>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#heroGradient)"/>
+  
+  <!-- Neon glow effects -->
+  <circle cx="200" cy="100" r="80" fill="url(#neonGlow)" opacity="0.4"/>
+  <circle cx="1000" cy="300" r="100" fill="url(#neonGlow)" opacity="0.3"/>
+  <circle cx="600" cy="50" r="60" fill="url(#neonGlow)" opacity="0.2"/>
+  
+  <!-- Grid pattern -->
+  <rect width="1200" height="400" fill="url(#grid)"/>
+  
+  <!-- Main title -->
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="48" font-weight="bold" 
+        text-anchor="middle" fill="url(#titleGradient)" filter="url(#glow)">
+    🌟 Tiation Terminal Workflows
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="24" font-weight="300" 
+        text-anchor="middle" fill="#FFFFFF" opacity="0.8">
+    Enterprise Grade Solution
+  </text>
+  
+  <!-- Feature highlights -->
+  <g transform="translate(150, 280)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="#1A1A2E" stroke="#00D9FF" stroke-width="1" opacity="0.8"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#00D9FF">⚡ Fast Execution</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FFFFFF" opacity="0.7">Pre-configured workflows</text>
+  </g>
+  
+  <g transform="translate(360, 280)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="#1A1A2E" stroke="#00FF88" stroke-width="1" opacity="0.8"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#00FF88">🔒 Enterprise Security</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FFFFFF" opacity="0.7">Security-focused scripts</text>
+  </g>
+  
+  <g transform="translate(570, 280)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="#1A1A2E" stroke="#FF0080" stroke-width="1" opacity="0.8"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#FF0080">🎨 Dark Neon Theme</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FFFFFF" opacity="0.7">Cyan/magenta gradients</text>
+  </g>
+  
+  <g transform="translate(780, 280)">
+    <rect x="0" y="0" width="180" height="60" rx="10" fill="#1A1A2E" stroke="#00D9FF" stroke-width="1" opacity="0.8"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#00D9FF">📱 Responsive Design</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FFFFFF" opacity="0.7">All devices supported</text>
+  </g>
+  
+  <!-- Terminal icon -->
+  <g transform="translate(50, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="5" fill="#0A0A0A" stroke="#00D9FF" stroke-width="2"/>
+    <circle cx="10" cy="10" r="3" fill="#FF0080"/>
+    <circle cx="20" cy="10" r="3" fill="#00FF88"/>
+    <circle cx="30" cy="10" r="3" fill="#00D9FF"/>
+    <text x="5" y="30" font-family="monospace" font-size="8" fill="#00D9FF">$ warp workflow</text>
+    <text x="5" y="42" font-family="monospace" font-size="8" fill="#00FF88">✓ Enterprise ready</text>
+    <text x="5" y="54" font-family="monospace" font-size="8" fill="#FFFFFF" opacity="0.7">→ Running...</text>
+  </g>
+  
+  <!-- Workflow diagram -->
+  <g transform="translate(1050, 150)">
+    <rect x="0" y="0" width="80" height="60" rx="5" fill="#1A1A2E" stroke="#00FF88" stroke-width="2"/>
+    <text x="40" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#00FF88">YAML</text>
+    <text x="40" y="35" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FFFFFF" opacity="0.7">Workflow</text>
+    <text x="40" y="48" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#FFFFFF" opacity="0.7">Specs</text>
+  </g>
 </svg>

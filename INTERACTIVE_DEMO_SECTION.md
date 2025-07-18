@@ -2,11 +2,11 @@
 ## 🎨 Interactive Demos
 
 <div align="center">
-  <a href="https://tiaastor.github.io/tiation-terminal-workflows/demo.html" target="_blank">
+<a href="https://tiation.github.io/tiation-terminal-workflows/demo.html" target="_blank">
     <img src=".screenshots/interactive-demo-preview.png" alt="Interactive Demo Preview" width="80%">
   </a>
   <br>
-  <a href="https://tiaastor.github.io/tiation-terminal-workflows/demo.html" target="_blank">
+  <a href="https://tiation.github.io/tiation-terminal-workflows/demo.html" target="_blank">
     <img src="https://img.shields.io/badge/🚀%20Launch%20Interactive%20Demo-00D9FF?style=for-the-badge&logo=github&logoColor=white" alt="Launch Interactive Demo">
   </a>
 </div>

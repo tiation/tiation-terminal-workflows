@@ -111,7 +111,7 @@ This project features a **dark neon theme** with:
 ## 🚀 Quick Links
 
 - [GitHub Repository](https://github.com/TiaAstor/tiation-terminal-workflows)
-- [Live Demo](https://tiaastor.github.io/tiation-terminal-workflows)
+- [Live Demo](https://tiation.github.io/tiation-terminal-workflows)
 - [Documentation](https://github.com/TiaAstor/tiation-terminal-workflows/wiki)
 - [Issues](https://github.com/TiaAstor/tiation-terminal-workflows/issues)
 
