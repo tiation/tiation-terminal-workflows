@@ -1,21 +1,21 @@
-# tiation-terminal-workflows
+# workflows
 
 <div align="center">
 
-![tiation terminal workflows Banner](https://img.shields.io/badge/🔮_TIATION-tiation_terminal_workflows-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
+![workflows Banner](https://img.shields.io/badge/🔮_TIATION-workflows-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
 
-**🌟 tiation terminal workflows - Enterprise Solution**
+**🌟 workflows - Enterprise Solution**
 
 *Professional • Scalable • Mission-Driven*
 
-[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A&logo=github&logoColor=white)](https://github.com/tiation/tiation-terminal-workflows)
-[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A&logo=opensourceinitiative&logoColor=white)](https://github.com/tiation/tiation-terminal-workflows/blob/main/LICENSE)
+[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A&logo=github&logoColor=white)](https://github.com/tiation/workflows)
+[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A&logo=opensourceinitiative&logoColor=white)](https://github.com/tiation/workflows/blob/main/LICENSE)
 
 </div>
 
 ## 🚀 Overview
 
-**tiation terminal workflows** is part of the Tiation enterprise ecosystem, delivering professional-grade solutions for modern business challenges.
+**workflows** is part of the Tiation enterprise ecosystem, delivering professional-grade solutions for modern business challenges.
 
 > 🎯 **Mission**: Provide scalable, enterprise-ready solutions through innovative technology and collaborative frameworks.
 
@@ -49,8 +49,8 @@ graph TB
 
 ```bash
 # Clone the repository
-git clone https://github.com/tiation/tiation-terminal-workflows.git
-cd tiation-terminal-workflows
+git clone https://github.com/tiation/workflows.git
+cd workflows
 
 # Follow installation instructions
 # (See project-specific setup in the repository)
